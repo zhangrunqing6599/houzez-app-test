@@ -35,7 +35,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'echo "Testing ..."'
-        sh 'npm run test -c'
+        sh 'npm run test-c'
       }
     }
     stage('Upload') {
