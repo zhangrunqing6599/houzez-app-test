@@ -42,9 +42,9 @@ pipeline {
         steps {
             echo 'Deploying to AWS s3 bucket.'
             withAWS(region:'ap-southeast-2',credentials:'houzez_app') {
-                // sh 'aws s3 sync /var/lib/jenkins/workspace/houzez_app_frontend_cicid/ s3://frontendhouzeztfs31027/ --exclude "node_modules/*"'
-                s3Delete(bucket:"frontendhouzeztfs31027", path:'');
-                s3Upload(bucket:"frontendhouzeztfs31027", includePathPattern:'**/*');
+                sh 'aws s3 sync /var/lib/jenkins/workspace/houzez_app_frontend_cicid/out/ s3://frontendhouzeztfs31027/ --exclude "node_modules/*"'
+                // s3Delete(bucket:"frontendhouzeztfs31027", path:'');
+                // s3Upload(bucket:"frontendhouzeztfs31027", includePathPattern:'**/*');
             }
         };
     }
